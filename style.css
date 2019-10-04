@@ -3152,7 +3152,7 @@ p:last-child {
 figcaption {
   text-align: center;
   color: grey;
-  display: inline-block;
+  display: block;
   margin: 5px auto 0 auto;
   padding-left: 5%;
   padding-right: 5%;
@@ -3160,6 +3160,7 @@ figcaption {
 
 .caption-center {
   text-align: center;
+  display: block;
 }
 
 html {
@@ -3244,4 +3245,9 @@ html {
 .copyright-statement {
   padding-left: 0;
   padding-right: 0;
+}
+
+
+.twopicture{
+  display: block;
 }
