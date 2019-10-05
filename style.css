@@ -3279,6 +3279,17 @@ div.p2 {
 		color: #fff;
 	}
 
+figure img{
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
 	article {
 		position: relative;
 		/* padding: 0 1rem; */
@@ -3313,12 +3324,3 @@ div.p2 {
 		padding: 1rem;
 		font-size: 1.5rem;
 	}
-.scrollimg{
-  position: absolute;
-    /* top: 25%; */
-
- vertical-align: middle;
-  text-align: center;
-     vertical-align: middle;
-     display: table-cell;
-}
