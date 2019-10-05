@@ -3234,7 +3234,6 @@ div.p2 {
 
 
 
-
 	#scrolly {
 		position: relative;
 		display: block;
@@ -3324,3 +3323,8 @@ figure img{
 		padding: 1rem;
 		font-size: 1.5rem;
 	}
+
+
+  .scrollama__debug-offset{
+  display: none;
+  }
