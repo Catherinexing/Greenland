@@ -1,7 +1,7 @@
 
   // using d3 for convenience
-  var main = d3.select('main')
-  var scrolly = main.select('#scrolly');
+  var firsts = d3.select('#firsts')
+  var scrolly =firsts.select('#scrolly');
   var figure = scrolly.select('figure');
   var article = scrolly.select('article');
   var step = article.selectAll('.step');
@@ -12,7 +12,7 @@
   // generic window resize listener event
   function handleResize() {
     // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.75);
+    var stepH = Math.floor(window.innerHeight * 0.3);
     step.style('height', stepH + 'px');
 
     var figureHeight = window.innerHeight / 2
@@ -40,22 +40,25 @@
 
     // update graphic based on step
 
-    // if (response.direction == 'down'){figure.append("img"). attr('#step-'+response.index+1).attr('opacity', 1)} ;
-    figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
+    if (response.direction == 'down'){figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1)} ;
 
+    // figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
     figure.select('p').text(response.index);
 
   }
 
 
-  // function handleStepExit(response) {
-  //   // response = { element, direction, index }
-  //   console.log(response.index, '-------- exit');
-  //   // remove color from current step
-  //   response.element.classList.remove('is-active');
-  //   // hide corresponding map step if scrolling up
-  //   if (response.direction == 'up') map.select('#step-'+response.index).attr('opacity', 0);
-  // }
+  function handleStepExit(response) {
+    // response = { element, direction, index }
+    console.log(response.index, '-------- exit');
+    // remove color from current step
+    response.element.classList.remove('is-active');
+    // hide corresponding map step if scrolling up
+    if (response.direction == 'up') map.select('#step-'+response.index).attr('opacity', 0);
+
+
+      figure.select('p').text(response.index);
+  }
 
 
   function setupStickyfill() {
