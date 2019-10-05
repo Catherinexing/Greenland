@@ -3297,12 +3297,12 @@ figure img{
 
 		/* max-width: 20rem; */
 		/* margin: 0 auto; */
-			margin-left:100px;
+			margin-left:8%;
 	}
 
 
 	.step {
-		margin: 0 auto 20rem auto;
+		margin: 0 auto 100px auto;
 		background-color: #3b3b3b;
 		color: #fff;
 		opacity: 0.5;
