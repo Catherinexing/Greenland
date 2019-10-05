@@ -3301,22 +3301,24 @@ figure img{
 	}
 
 
-	.step {
-		margin: 0 auto 100px auto;
-		background-color: #3b3b3b;
-		color: #fff;
-		opacity: 0.5;
+  .step {
+  			margin: 0 auto 2rem auto;
+  			background-color: #3b3b3b;
+  			color: #fff;
+  			opacity: 0;
 
-	}
+  		}
 
-	.step:last-child {
-		margin-bottom: 0;
-	}
+  		.step:last-child {
+  			margin-bottom: 200px;
+  		}
 
-	.step.is-active {
-		background-color: goldenrod;
-		color: #3b3b3b;
-	}
+  		.step.is-active {
+  			background-color:rgba(0, 255, 0, 0.3);;
+  			color: #3b3b3b;
+  				opacity: 1;
+  		}
+
 
 	.step p {
 		text-align: center;

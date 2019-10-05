@@ -12,7 +12,7 @@
   // generic window resize listener event
   function handleResize() {
     // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.6 );
+    var stepH = Math.floor(window.innerHeight * 0.7 );
     step.style('height', stepH + 'px');
 
     var figureHeight = window.innerHeight
@@ -44,7 +44,7 @@
 
     figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
 
-    figure.select('p').text(response.index);
+    // figure.select('p').text(response.index);
 
   }
 
@@ -79,7 +79,7 @@
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         step: '#scrolly article .step',
-        offset: 0.8,
+        offset: 0.5,
         debug: true,
       })
       .onStepEnter(handleStepEnter)
