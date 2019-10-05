@@ -1,307 +1,89 @@
-! function(t, e) {
-  "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define("scrollMonitor", [], e) : "object" == typeof exports ? exports.scrollMonitor = e() : t.scrollMonitor = e()
-}(this, function() {
-  return function(t) {
-    function e(o) {
-      if (i[o]) return i[o].exports;
-      var s = i[o] = {
-        exports: {},
-        id: o,
-        loaded: !1
-      };
-      return t[o].call(s.exports, s, s.exports, e), s.loaded = !0, s.exports
-    }
-    var i = {};
-    return e.m = t, e.c = i, e.p = "", e(0)
-  }([function(t, e, i) {
-    "use strict";
-    var o = i(1),
-      s = o.isInBrowser,
-      n = i(2),
-      r = new n(s ? document.body : null);
-    r.setStateFromDOM(null), r.listenToDOM(), s && (window.scrollMonitor = r), t.exports = r
-  }, function(t, e) {
-    "use strict";
-    e.VISIBILITYCHANGE = "visibilityChange", e.ENTERVIEWPORT = "enterViewport", e.FULLYENTERVIEWPORT = "fullyEnterViewport", e.EXITVIEWPORT = "exitViewport", e.PARTIALLYEXITVIEWPORT = "partiallyExitViewport", e.LOCATIONCHANGE = "locationChange", e.STATECHANGE = "stateChange", e.eventTypes = [e.VISIBILITYCHANGE, e.ENTERVIEWPORT, e.FULLYENTERVIEWPORT, e.EXITVIEWPORT, e.PARTIALLYEXITVIEWPORT, e.LOCATIONCHANGE, e.STATECHANGE], e.isOnServer = "undefined" == typeof window, e.isInBrowser = !e.isOnServer, e.defaultOffsets = {
-      top: 0,
-      bottom: 0
-    }
-  }, function(t, e, i) {
-    "use strict";
 
-    function o(t, e) {
-      if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
-    }
+  // using d3 for convenience
+  var main = d3.select('main')
+  var scrolly = main.select('#scrolly');
+  var figure = scrolly.select('figure');
+  var article = scrolly.select('article');
+  var step = article.selectAll('.step');
 
-    function s(t) {
-      return c ? 0 : t === document.body ? window.innerHeight || document.documentElement.clientHeight : t.clientHeight
-    }
+  // initialize the scrollama
+  var scroller = scrollama();
 
-    function n(t) {
-      return c ? 0 : t === document.body ? Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.documentElement.clientHeight) : t.scrollHeight
-    }
+  // generic window resize listener event
+  function handleResize() {
+    // 1. update height of step elements
+    var stepH = Math.floor(window.innerHeight * 0.35);
+    step.style('height', stepH + 'px');
 
-    function r(t) {
-      return c ? 0 : t === document.body ? window.pageYOffset || document.documentElement && document.documentElement.scrollTop || document.body.scrollTop : t.scrollTop
-    }
-    var h = i(1),
-      c = h.isOnServer,
-      a = h.isInBrowser,
-      l = h.eventTypes,
-      p = i(3),
-      u = function() {
-        function t(e, i) {
-          function h() {
-            if (a.viewportTop = r(e), a.viewportBottom = a.viewportTop + a.viewportHeight, a.documentHeight = n(e), a.documentHeight !== p) {
-              for (u = a.watchers.length; u--;) a.watchers[u].recalculateLocation();
-              p = a.documentHeight
-            }
-          }
+    var figureHeight = window.innerHeight / 2
+    var figureMarginTop = (window.innerHeight - figureHeight) / 2
+    // var figureWidth = window.innerWidth
 
-          function c() {
-            for (w = a.watchers.length; w--;) a.watchers[w].update();
-            for (w = a.watchers.length; w--;) a.watchers[w].triggerCallbacks()
-          }
-          o(this, t);
-          var a = this;
-          this.item = e, this.watchers = [], this.viewportTop = null, this.viewportBottom = null, this.documentHeight = n(e), this.viewportHeight = s(e), this.DOMListener = function() {
-            t.prototype.DOMListener.apply(a, arguments)
-          }, this.eventTypes = l, i && (this.containerWatcher = i.create(e));
-          var p, u, w;
-          this.update = function() {
-            h(), c()
-          }, this.recalculateLocations = function() {
-            this.documentHeight = 0, this.update()
-          }
-        }
-        return t.prototype.listenToDOM = function() {
-          a && (window.addEventListener ? (this.item === document.body ? window.addEventListener("scroll", this.DOMListener) : this.item.addEventListener("scroll", this.DOMListener), window.addEventListener("resize", this.DOMListener)) : (this.item === document.body ? window.attachEvent("onscroll", this.DOMListener) : this.item.attachEvent("onscroll", this.DOMListener), window.attachEvent("onresize", this.DOMListener)), this.destroy = function() {
-            window.addEventListener ? (this.item === document.body ? (window.removeEventListener("scroll", this.DOMListener), this.containerWatcher.destroy()) : this.item.removeEventListener("scroll", this.DOMListener), window.removeEventListener("resize", this.DOMListener)) : (this.item === document.body ? (window.detachEvent("onscroll", this.DOMListener), this.containerWatcher.destroy()) : this.item.detachEvent("onscroll", this.DOMListener), window.detachEvent("onresize", this.DOMListener))
-          })
-        }, t.prototype.destroy = function() {}, t.prototype.DOMListener = function(t) {
-          this.setStateFromDOM(t), this.updateAndTriggerWatchers(t)
-        }, t.prototype.setStateFromDOM = function(t) {
-          var e = r(this.item),
-            i = s(this.item),
-            o = n(this.item);
-          this.setState(e, i, o, t)
-        }, t.prototype.setState = function(t, e, i, o) {
-          var s = e !== this.viewportHeight || i !== this.contentHeight;
-          if (this.latestEvent = o, this.viewportTop = t, this.viewportHeight = e, this.viewportBottom = t + e, this.contentHeight = i, s)
-            for (var n = this.watchers.length; n--;) this.watchers[n].recalculateLocation();
-          this.updateAndTriggerWatchers(o)
-        }, t.prototype.updateAndTriggerWatchers = function(t) {
-          for (var e = this.watchers.length; e--;) this.watchers[e].update();
-          for (e = this.watchers.length; e--;) this.watchers[e].triggerCallbacks(t)
-        }, t.prototype.createCustomContainer = function() {
-          return new t
-        }, t.prototype.createContainer = function(e) {
-          "string" == typeof e ? e = document.querySelector(e) : e && e.length > 0 && (e = e[0]);
-          var i = new t(e, this);
-          return i.setStateFromDOM(), i.listenToDOM(), i
-        }, t.prototype.create = function(t, e) {
-          "string" == typeof t ? t = document.querySelector(t) : t && t.length > 0 && (t = t[0]);
-          var i = new p(this, t, e);
-          return this.watchers.push(i), i
-        }, t.prototype.beget = function(t, e) {
-          return this.create(t, e)
-        }, t
-      }();
-    t.exports = u
-  }, function(t, e, i) {
-    "use strict";
-
-    function o(t, e, i) {
-      function o(t, e) {
-        if (0 !== t.length)
-          for (E = t.length; E--;) T = t[E], T.callback.call(s, e, s), T.isOne && t.splice(E, 1)
-      }
-      var s = this;
-      this.watchItem = e, this.container = t, i ? i === +i ? this.offsets = {
-        top: i,
-        bottom: i
-      } : this.offsets = {
-        top: i.top || w.top,
-        bottom: i.bottom || w.bottom
-      } : this.offsets = w, this.callbacks = {};
-      for (var d = 0, f = u.length; d < f; d++) s.callbacks[u[d]] = [];
-      this.locked = !1;
-      var m, v, b, I, E, T;
-      this.triggerCallbacks = function(t) {
-        switch (this.isInViewport && !m && o(this.callbacks[r], t), this.isFullyInViewport && !v && o(this.callbacks[h], t), this.isAboveViewport !== b && this.isBelowViewport !== I && (o(this.callbacks[n], t), v || this.isFullyInViewport || (o(this.callbacks[h], t), o(this.callbacks[a], t)), m || this.isInViewport || (o(this.callbacks[r], t), o(this.callbacks[c], t))), !this.isFullyInViewport && v && o(this.callbacks[a], t), !this.isInViewport && m && o(this.callbacks[c], t), this.isInViewport !== m && o(this.callbacks[n], t), !0) {
-          case m !== this.isInViewport:
-          case v !== this.isFullyInViewport:
-          case b !== this.isAboveViewport:
-          case I !== this.isBelowViewport:
-            o(this.callbacks[p], t)
-        }
-        m = this.isInViewport, v = this.isFullyInViewport, b = this.isAboveViewport, I = this.isBelowViewport
-      }, this.recalculateLocation = function() {
-        if (!this.locked) {
-          var t = this.top,
-            e = this.bottom;
-          if (this.watchItem.nodeName) {
-            var i = this.watchItem.style.display;
-            "none" === i && (this.watchItem.style.display = "");
-            for (var s = 0, n = this.container; n.containerWatcher;) s += n.containerWatcher.top - n.containerWatcher.container.viewportTop, n = n.containerWatcher.container;
-            var r = this.watchItem.getBoundingClientRect();
-            this.top = r.top + this.container.viewportTop - s, this.bottom = r.bottom + this.container.viewportTop - s, "none" === i && (this.watchItem.style.display = i)
-          } else this.watchItem === +this.watchItem ? this.watchItem > 0 ? this.top = this.bottom = this.watchItem : this.top = this.bottom = this.container.documentHeight - this.watchItem : (this.top = this.watchItem.top, this.bottom = this.watchItem.bottom);
-          this.top -= this.offsets.top, this.bottom += this.offsets.bottom, this.height = this.bottom - this.top, void 0 === t && void 0 === e || this.top === t && this.bottom === e || o(this.callbacks[l], null)
-        }
-      }, this.recalculateLocation(), this.update(), m = this.isInViewport, v = this.isFullyInViewport, b = this.isAboveViewport, I = this.isBelowViewport
-    }
-    var s = i(1),
-      n = s.VISIBILITYCHANGE,
-      r = s.ENTERVIEWPORT,
-      h = s.FULLYENTERVIEWPORT,
-      c = s.EXITVIEWPORT,
-      a = s.PARTIALLYEXITVIEWPORT,
-      l = s.LOCATIONCHANGE,
-      p = s.STATECHANGE,
-      u = s.eventTypes,
-      w = s.defaultOffsets;
-    o.prototype = {
-      on: function(t, e, i) {
-        switch (!0) {
-          case t === n && !this.isInViewport && this.isAboveViewport:
-          case t === r && this.isInViewport:
-          case t === h && this.isFullyInViewport:
-          case t === c && this.isAboveViewport && !this.isInViewport:
-          case t === a && this.isAboveViewport:
-            if (e.call(this, this.container.latestEvent, this), i) return
-        }
-        if (!this.callbacks[t]) throw new Error("Tried to add a scroll monitor listener of type " + t + ". Your options are: " + u.join(", "));
-        this.callbacks[t].push({
-          callback: e,
-          isOne: i || !1
-        })
-      },
-      off: function(t, e) {
-        if (!this.callbacks[t]) throw new Error("Tried to remove a scroll monitor listener of type " + t + ". Your options are: " + u.join(", "));
-        for (var i, o = 0; i = this.callbacks[t][o]; o++)
-          if (i.callback === e) {
-            this.callbacks[t].splice(o, 1);
-            break
-          }
-      },
-      one: function(t, e) {
-        this.on(t, e, !0)
-      },
-      recalculateSize: function() {
-        this.height = this.watchItem.offsetHeight + this.offsets.top + this.offsets.bottom, this.bottom = this.top + this.height
-      },
-      update: function() {
-        this.isAboveViewport = this.top < this.container.viewportTop, this.isBelowViewport = this.bottom > this.container.viewportBottom, this.isInViewport = this.top < this.container.viewportBottom && this.bottom > this.container.viewportTop, this.isFullyInViewport = this.top >= this.container.viewportTop && this.bottom <= this.container.viewportBottom || this.isAboveViewport && this.isBelowViewport
-      },
-      destroy: function() {
-        var t = this.container.watchers.indexOf(this),
-          e = this;
-        this.container.watchers.splice(t, 1);
-        for (var i = 0, o = u.length; i < o; i++) e.callbacks[u[i]].length = 0
-      },
-      lock: function() {
-        this.locked = !0
-      },
-      unlock: function() {
-        this.locked = !1
-      }
-    };
-    for (var d = function(t) {
-        return function(e, i) {
-          this.on.call(this, t, e, i)
-        }
-      }, f = 0, m = u.length; f < m; f++) {
-      var v = u[f];
-      o.prototype[v] = d(v)
-    }
-    t.exports = o
-  }])
-});
-//# sourceMappingURL=scrollMonitor.js.map
+    figure
+      .style('height', figureHeight + 'px')
+      .style('top', figureMarginTop + 'px');
 
 
+    // 3. tell scrollama to update new element dimensions
+    scroller.resize();
+  }
 
-function sizeImg(e, t) {
-  var i = e.getAttribute("data-root");
-  imgsrc = t < 500 ? i.replace("{{size}}", "500") : t < 800 ? i.replace("{{size}}", "800") : t < 120 ? i.replace("{{size}}", "120") : i.replace("{{size}}", "1600"), e.setAttribute("src", imgsrc)
-}
+  // scrollama event handlers
+  function handleStepEnter(response) {
+    console.log(response.index, '-------- enter');
+    // response = { element, direction, index }
 
-function resize() {
-  window.innerHeight;
-  var e = document.getElementById("slider_container").offsetWidth;
-  e < 992 ? document.getElementById("slider_container").setAttribute("style", "height:" + Math.round(.75 * e) + "px") : document.getElementById("slider_container").setAttribute("style", "height:" + Math.round(.5 * e) + "px");
-  var t, i = document.querySelectorAll(".responsive");
-  for (t = 0; t < i.length; ++t) sizeImg(i[t], e);
-  scrollMonitor.recalculateLocations()
-}
+    // add color to current step only
+    step.classed('is-active', function(d, i) {
+      return i === response.index;
+    })
+
+    // update graphic based on step
+
+    // if (response.direction == 'down'){figure.append("img"). attr('#step-'+response.index+1).attr('opacity', 1)} ;
+    figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
+
+    figure.select('p').text(response.index);
+
+  }
 
 
-window.addEventListener("resize", resize, !1);
-var vpH = window.innerHeight - 50,
-  delay = .2 * vpH,
-  sliderW = document.getElementById("slider_container").offsetWidth;
-sliderW < 992 ? document.getElementById("slider_container").setAttribute("style", "height:" + Math.round(.75 * sliderW) + "px") : document.getElementById("slider_container").setAttribute("style", "height:" + Math.round(.5 * sliderW) + "px"), sizeImg(document.getElementById("basemap"), sliderW), sizeImg(document.getElementById("modern"), sliderW);
-var watcher0 = scrollMonitor.create(document.getElementById("interactive"), {
-  top: -vpH,
-  bottom: vpH
-});
-watcher0.enterViewport(function() {
-  document.getElementById("sticky").classList.add("fixed"), sizeImg(document.getElementById("mexica"), sliderW)
-}), watcher0.exitViewport(function() {
-  document.getElementById("sticky").classList.remove("fixed"), document.getElementById("basemap").classList.remove("i"), document.getElementById("modern").classList.remove("i");
-  var e, t = document.querySelectorAll(".marker1");
-  for (e = 0; e < t.length; ++e) t[e].classList.remove("active")
-});
-var watcher1 = scrollMonitor.create(document.getElementById("info1"), 0),
-  watcher2 = scrollMonitor.create(document.getElementById("info2"), {
-    top: delay,
-    bottom: 0
-  }),
-  watcher3 = scrollMonitor.create(document.getElementById("info3"), {
-    top: delay,
-    bottom: 0
-  }),
-  watcher4 = scrollMonitor.create(document.getElementById("info4"), {
-    top: delay,
-    bottom: 0
-  }),
-  watcher5 = scrollMonitor.create(document.getElementById("info5"), {
-    top: delay,
-    bottom: 0
-  }),
-  watcher6 = scrollMonitor.create(document.getElementById("info6"), {
-    top: 0,
-    bottom: 15 * vpH
-  }),
-  watcher7 = scrollMonitor.create(document.getElementById("info7"), {
-    top: delay,
-    bottom: 2 * vpH
-  });
-watcher1.enterViewport(function() {
-  var e, t = document.querySelectorAll(".marker2");
-  for (e = 0; e < t.length; ++e) t[e].classList.remove("active");
-  document.getElementById("mexica").classList.remove("ii");
-  var i, n = document.querySelectorAll(".marker1");
-  for (i = 0; i < n.length; ++i) n[i].classList.add("active");
-  document.getElementById("basemap").classList.add("i"), document.getElementById("modern").classList.add("i"), sizeImg(document.getElementById("island"), sliderW)
-}), watcher2.enterViewport(function() {
-  var e, t = document.querySelectorAll(".marker1");
-  for (e = 0; e < t.length; ++e) t[e].classList.remove("active");
-  document.getElementById("modern").classList.remove("i"), document.getElementById("highlight3").classList.remove("iii"), document.getElementById("island").classList.remove("iii"), document.getElementById("basemap").classList.remove("iii"), document.getElementById("mexica").classList.remove("iii");
-  var i, n = document.querySelectorAll(".marker2");
-  for (i = 0; i < n.length; ++i) n[i].classList.add("active");
-  document.getElementById("basemap").classList.add("i"), document.getElementById("mexica").classList.add("ii"), sizeImg(document.getElementById("temple"), sliderW)
-}), watcher3.enterViewport(function() {
-  var e, t = document.querySelectorAll(".marker2");
-  for (e = 0; e < t.length; ++e) t[e].classList.remove("active");
-  document.getElementById("mexica").classList.remove("ii"), document.getElementById("highlight4").classList.remove("iv"), document.getElementById("island").classList.remove("iv"), document.getElementById("temple").classList.remove("iv"), document.getElementById("highlight3").classList.add("iii"), document.getElementById("basemap").classList.add("iii"), document.getElementById("mexica").classList.add("iii"), document.getElementById("island").classList.add("iii"), sizeImg(document.getElementById("rack"), sliderW)
-}), watcher4.enterViewport(function() {
-  document.getElementById("highlight5").classList.remove("v"), document.getElementById("temple").classList.remove("v"), document.getElementById("rack").classList.remove("v"), document.getElementById("highlight4").classList.add("iv"), document.getElementById("island").classList.add("iv"), document.getElementById("temple").classList.add("iv"), sizeImg(document.getElementById("tower"), sliderW)
-}), watcher5.enterViewport(function() {
-  document.getElementById("rack").classList.remove("vi2"), document.getElementById("rack").classList.remove("vi"), document.getElementById("highlight5").classList.add("v"), document.getElementById("temple").classList.add("v"), document.getElementById("rack").classList.add("v")
-}), watcher6.enterViewport(function() {
-  document.getElementById("tower").classList.remove("vii"), document.getElementById("rack").classList.add("vi"), document.getElementById("callout").classList.add("vi"), document.getElementById("tower").classList.add("vi")
-}), watcher7.exitViewport(function() {
-  document.getElementById("callout").classList.remove("vi"), document.getElementById("tower").classList.remove("vi"), document.getElementById("rack").classList.remove("vi"), document.getElementById("rack").classList.add("vi2")
-});
+  // function handleStepExit(response) {
+  //   // response = { element, direction, index }
+  //   console.log(response.index, '-------- exit');
+  //   // remove color from current step
+  //   response.element.classList.remove('is-active');
+  //   // hide corresponding map step if scrolling up
+  //   if (response.direction == 'up') map.select('#step-'+response.index).attr('opacity', 0);
+  // }
+
+
+  function setupStickyfill() {
+    d3.selectAll('.sticky').each(function() {
+      Stickyfill.add(this);
+    });
+  }
+
+  function init() {
+    setupStickyfill();
+
+    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+    handleResize();
+
+    // 2. setup the scroller passing options
+    // 		this will also initialize trigger observations
+    // 3. bind scrollama event handlers (this can be chained like below)
+    scroller.setup({
+        step: '#scrolly article .step',
+        offset: 0.33,
+        debug: true,
+      })
+      .onStepEnter(handleStepEnter)
+
+
+    // setup resize event
+    window.addEventListener('resize', handleResize);
+  }
+
+  // kick things off
+  init();
