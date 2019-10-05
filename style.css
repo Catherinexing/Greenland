@@ -3261,6 +3261,8 @@ div.p2 {
 		transform: translate3d(0, 0, 0);
 		background-color: #8a8a8a;
     overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
 	}
 
 	figure p {
@@ -3311,3 +3313,12 @@ div.p2 {
 		padding: 1rem;
 		font-size: 1.5rem;
 	}
+.scrollimg{
+  position: absolute;
+    /* top: 25%; */
+
+ vertical-align: middle;
+  text-align: center;
+     vertical-align: middle;
+     display: table-cell;
+}
