@@ -3240,8 +3240,8 @@ div.p2 {
 		/* display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex; */
-		background-color: #f3f3f3;
-		padding: 1rem;
+		/* background-color: #f3f3f3; */
+		/* padding: 1rem; */
 	}
 
 	#scrolly>* {
@@ -3258,8 +3258,8 @@ div.p2 {
 		-webkit-transform: translate3d(0, 0, 0);
 		-moz-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
-		background-color: #8a8a8a;
-    overflow: hidden;
+		/* background-color: #8a8a8a; */
+    /* overflow: hidden; */
     text-align: center;
     vertical-align: middle;
 	}
@@ -3279,8 +3279,9 @@ div.p2 {
 	}
 
 figure img{
+  width:100%;
   text-align: center;
-  padding: 1rem;
+  padding:0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3303,18 +3304,18 @@ figure img{
 
   .step {
   			margin: 0 auto 2rem auto;
-  			background-color: #3b3b3b;
+  			/* background-color: #3b3b3b; */
   			color: #fff;
   			opacity: 0;
 
   		}
 
   		.step:last-child {
-  			margin-bottom: 200px;
+  			/* margin-bottom: 200px; */
   		}
 
   		.step.is-active {
-  			background-color:rgba(0, 255, 0, 0.3);;
+  			/* background-color:rgba(106, 108, 110, 0.4);; */
   			color: #3b3b3b;
   				opacity: 1;
   		}
@@ -3326,7 +3327,11 @@ figure img{
 		font-size: 1.5rem;
 	}
 
-
+.stepbox{
+  	background-color:rgba(106, 108, 110, 0.4);
+    width:300px;
+    height: 300px;
+}
   .scrollama__debug-offset{
   display: none;
   }
