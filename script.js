@@ -18,10 +18,10 @@
     // var figureHeight = window.innerHeight
     // var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
-    var stepH = Math.floor(window.innerHeight * 0.6);
+    var stepH = Math.floor(window.innerHeight * 0.75);
     step.style('height', stepH + 'px');
 
-    var figureHeight = window.innerWidth/2
+    var figureHeight = window.innerWidth*0.7
     var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
     figure
