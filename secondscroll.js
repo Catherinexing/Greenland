@@ -13,16 +13,29 @@
   // generic window resize listener event
   function handleResize() {
     // 1. update height of step elements
-    var secondstepH = Math.floor(window.innerHeight * 0.75);
+    var secondstepH = Math.floor(window.innerHeight * 0.7);
     secondstep.style('height', secondstepH + 'px');
 
-    var secondfigureHeight = window.innerHeight / 2
+    var secondfigureHeight = window.innerHeight*1.2
     var secondfigureMarginTop = (window.innerHeight - secondfigureHeight) /5
-    // var figureWidth = window.innerWidth
 
+// var secondfigureHeight2 = window.innerHeight*0.9
+//   var secondfigureMarginTop2 = (secondfigureHeight-window.innerHeight)/2
     secondfigure
       .style('height', secondfigureHeight + 'px')
       .style('top', secondfigureMarginTop + 'px');
+
+
+
+//
+// if (window.innerWidth < 600) {  secondfigure
+//   .style('height', secondfigureHeight2 + 'px')
+//   .style('top', secondfigureMarginTop2  + 'px');
+// } else {
+//   secondfigure
+//     .style('height', secondfigureHeight + 'px')
+//     .style('top', secondfigureMarginTop + 'px');
+// }
 
 
     // 3. tell scrollama to update new element dimensions
@@ -77,7 +90,7 @@
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         step: '#secondscrolly #secondarticle .secondstep',
-        offset: 0.33,
+        offset: 0.4,
         debug: true,
       })
       .onStepEnter(handleStepEnter)
