@@ -3307,12 +3307,13 @@ figure img{
   			margin: 0 auto 2rem auto;
   			/* background-color: #3b3b3b; */
   			color: #fff;
-  			/* opacity: 0; */
+  			opacity: 0;
 
   		}
 
   		.step:last-child {
-  			/* margin-bottom: 200px; */
+        /* margin-top: -5em;
+  			margin-bottom: 5em; */
   		}
 
   		.step.is-active {
@@ -3333,6 +3334,7 @@ figure img{
     width:300px;
     height: 300px;
 }
+
   .scrollama__debug-offset{
-  display: none;
+  /* display: none; */
   }
