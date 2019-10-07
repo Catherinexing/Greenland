@@ -49,7 +49,7 @@
     //
     // figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
 
-      figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").style('opacity', 0).transition().duration(200)  .ease(d3.easeLinear).style("opacity",1);
+      figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
 
     // figure.select('p').text(response.index);
 
