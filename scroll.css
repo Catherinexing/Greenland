@@ -56,45 +56,28 @@ figure img{
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+   /* animation: fadeIn 2s; */
 
-    /* -webkit-animation: fadein 2s;
-       -moz-animation: fadein 2s;
-         -o-animation: fadein 2s;  */
-            animation: fadein 5s;
 }
+/* #step-0,
+#step-1,
+#step-2,
+#step-3{
+	    animation: fadeIn 5s;
+} */
+/* .isactive{
+	  animation: fadein 2s;
+} */
 
-.isactive{
-	opacity:1;
-	  animation: fadein 5s;
+/* @-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-		/* -webkit-transition: opacity .5s;
-		-moz-transition: opacity .5s;
-		-o-transition: opacity .5s */
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
+  to {
+    opacity: 1;
+  }
+} */
 
 
 
@@ -259,5 +242,5 @@ figure img{
 
 /* common code */
   .scrollama__debug-offset{
-  display: none;
+  /* display: none; */
   }
