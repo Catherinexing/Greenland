@@ -56,7 +56,27 @@ figure img{
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
 
+@-webkit-keyframes fadeIn{
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+
+}
+
+
+
+.isactive{
+	opacity:1;
+	transition: opacity 2s;
+		-webkit-transition: opacity .5s;
+		-moz-transition: opacity .5s;
+		-o-transition: opacity .5s
 }
 	article {
 		position: relative;
@@ -87,6 +107,7 @@ figure img{
   			background-color:rgba(106, 108, 110, 0.4);
   			color: #3b3b3b;
   				opacity: 1;
+
   		}
 
 

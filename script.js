@@ -46,8 +46,10 @@
     // update graphic based on step
 
     // if (response.direction == 'down'){figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1)} ;
+    //
+    // figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
 
-    figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr('opacity', 1);
+      figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").attr("class","isactive");
 
     // figure.select('p').text(response.index);
 
