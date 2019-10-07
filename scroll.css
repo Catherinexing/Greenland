@@ -104,24 +104,28 @@ figure img{
   		}
 
   		.step.is-active {
-  			background-color:rgba(106, 108, 110, 0.4);
+  			/* background-color:rgba(106, 108, 110, 0.4); */
   			color: #3b3b3b;
   				opacity: 1;
 
   		}
 
-
+			.step h2 {
+				text-align: left;
+				padding: 1rem;
+				font-size:24px;
+			}
 	.step p {
-		text-align: center;
+		text-align: left;
 		padding: 1rem;
-		font-size: 1.5rem;
+		font-size:16px;
 	}
 
-/* .stepbox{
-  	background-color:rgba(106, 108, 110, 0.4);
+.stepbox{
+  	background-color:rgba(255, 255, 255, 0.6);
     width:300px;
     height: 300px;
-} */
+}
 
 
 
