@@ -13,29 +13,29 @@
   // generic window resize listener event
   function handleResize() {
     // 1. update height of step elements
-    var secondstepH = Math.floor(window.innerHeight * 0.5);
+    var secondstepH = Math.floor(window.innerWidth * 0.7);
     secondstep.style('height', secondstepH + 'px');
 
-    var secondfigureHeight = window.innerHeight*1
-    var secondfigureMarginTop = (window.innerHeight - secondfigureHeight) /5
+    var secondfigureHeight = window.innerWidth*(827/700)
+    var secondfigureMarginTop = (window.innerHeight - secondfigureHeight) /2
 
-// var secondfigureHeight2 = window.innerHeight*0.9
-//   var secondfigureMarginTop2 = (secondfigureHeight-window.innerHeight)/2
+var secondfigureHeight2 = 700*(827/700)
+  var secondfigureMarginTop2 = (window.innerHeight)/5
     secondfigure
       .style('height', secondfigureHeight + 'px')
       .style('top', secondfigureMarginTop + 'px');
 
 
 
-//
-// if (window.innerWidth < 600) {  secondfigure
-//   .style('height', secondfigureHeight2 + 'px')
-//   .style('top', secondfigureMarginTop2  + 'px');
-// } else {
-//   secondfigure
-//     .style('height', secondfigureHeight + 'px')
-//     .style('top', secondfigureMarginTop + 'px');
-// }
+
+if (window.innerWidth >700) {  secondfigure
+  .style('height', secondfigureHeight2 + 'px')
+  .style('top', secondfigureMarginTop2 + 'px');
+} else {
+  secondfigure
+    .style('height', secondfigureHeight + 'px')
+    .style('top', secondfigureMarginTop + 'px');
+}
 
 
     // 3. tell scrollama to update new element dimensions
