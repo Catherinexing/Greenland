@@ -56,7 +56,8 @@ figure img{
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-   /* animation: fadeIn 2s; */
+	opacity: 1;
+   animation: fadeIn 2s;
 
 }
 /* #step-0,
@@ -65,11 +66,13 @@ figure img{
 #step-3{
 	    animation: fadeIn 5s;
 } */
-/* .isactive{
-	  animation: fadein 2s;
-} */
 
-/* @-webkit-keyframes fadeIn {
+
+.isactive1{
+	  animation: fadein 2s;
+}
+
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -77,7 +80,7 @@ figure img{
   to {
     opacity: 1;
   }
-} */
+}
 
 
 
