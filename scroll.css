@@ -57,7 +57,8 @@ figure img{
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 	opacity: 1;
-   animation: fadeIn 2s;
+
+   /* animation: fadeIn 2s; */
 
 }
 /* #step-0,
@@ -68,9 +69,6 @@ figure img{
 } */
 
 
-.isactive1{
-	  animation: fadein 2s;
-}
 
 @-webkit-keyframes fadeIn {
   from {
