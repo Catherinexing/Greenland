@@ -111,13 +111,16 @@ figure img{
   		}
 
 			.step h2 {
+				font-family: Roboto;
+				font-weight: bold;
 				text-align: left;
-				padding: 1rem;
-				font-size:24px;
+				padding:  1rem 1rem 0 1rem;
+				font-size:26px;
 			}
 	.step p {
+			font-family: Roboto;
 		text-align: left;
-		padding: 1rem;
+		padding: 0 1rem;
 		font-size:16px;
 	}
 
@@ -234,5 +237,5 @@ figure img{
 
 /* common code */
   .scrollama__debug-offset{
-  /* display: none; */
+  display: none;
   }
