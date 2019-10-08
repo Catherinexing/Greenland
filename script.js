@@ -53,7 +53,7 @@
 
       figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-"  + (response.index) + ".jpg").attr('opacity', 1);
 
-      figure.select(".overlayimg1").attr("src", "img/" + "step-" + (response.index) + ".png").style('opacity', 0).transition().duration(4000)  .ease(d3.easeLinear).style("opacity",1);
+      figure.select(".overlayimg1").attr("src", "img/" + "step-" + (response.index) + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
 
 
 // if   (id === “#step-1”) {
