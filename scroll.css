@@ -88,7 +88,7 @@ figure img{
 		position: relative;
 		/* padding: 0 1rem; */
 		padding: 0;
-	width: 33%;
+	width: 25%;
 
 		/* max-width: 20rem; */
 		/* margin: 0 auto; */
@@ -97,7 +97,7 @@ figure img{
 
 
   .step {
-  			/* margin: 0 auto 0 auto; */
+  			margin: 0 auto 50rem auto;
   			/* background-color: yellow; */
 				color: transparent;
 
@@ -114,7 +114,7 @@ figure img{
   		.step.is-active {
   			background-color:rgba(0, 0,0, 0.7);
   			color: white;
-	animation: fadeIn 0.3s;
+	animation: fadeIn 1s;
 
 
 
@@ -193,7 +193,7 @@ figure img{
     position: relative;
     /* padding: 0 1rem; */
     padding: 0;
-  width: 33%;
+  width: 25%;
 
     /* max-width: 20rem; */
     /* margin: 0 auto; */
