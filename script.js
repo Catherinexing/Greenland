@@ -18,12 +18,13 @@
     // var figureHeight = window.innerHeight
     // var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
-    var stepH = Math.floor(window.innerHeight * 0.6);
-    step.style('height', stepH + 'px');
+
 
     var figureHeight = window.innerWidth*(1272/2000)
     var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
+        var stepH = Math.floor(figureHeight * 0.9);
+        step.style('height', stepH + 'px');
     figure
       .style('height', figureHeight + 'px')
       .style('top', figureMarginTop + 'px');
@@ -122,7 +123,8 @@
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         step: '#scrolly article .step',
-        offset: 0.8,
+          offset: 0.5,
+
         debug: true,
       })
       .onStepEnter(handleStepEnter)
