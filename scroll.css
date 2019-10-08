@@ -106,8 +106,7 @@ figure img{
 
   		.step:last-child {
 				/* padding-bottom: 15em; */
-/* background-color: white; */
-opacity: 0;
+				opacity: 0;
   			margin-bottom: 0;
   		}
 
