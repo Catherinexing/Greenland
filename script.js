@@ -53,19 +53,40 @@
 
       figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-"  + (response.index) + ".jpg").attr('opacity', 1);
 
-      figure.select(".overlayimg1").attr("src", "img/" + "step-" + (response.index) + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
+      figure.select(".overlayimg1").attr("src", "img/" + "step-" + (response.index) + ".png").style('opacity', 0).transition().duration(1000)  .ease(d3.easeLinear).style("opacity",1);
 
 
-// if   (id === “#step-1”) {
+// if   (response.index === 0) {
 //     figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-0"  + ".jpg").attr('opacity', 1);
 //
-//   figure.select(".overlayimg1").attr("src", "img/" + "step-0" + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
+//   figure.select(".overlayimg0").attr("src", "img/" + "step-0" + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
+//
+// };
+//
+// if   (response.index === 1) {
+//     figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-0"  + ".jpg").attr('opacity', 1);
+//
+//   figure.select(".overlayimg1").attr("src", "img/" + "step-1" + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
+//
+// };
+//
+// if   (response.index === 2) {
+//     figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-0"  + ".jpg").attr('opacity', 1);
+//
+//   // figure.select(".overlayimg1").attr("src", "img/" + "step-1" + ".png").style("opacity",1);
+//
+//   figure.select(".overlayimg2").attr("src", "img/" + "step-2" + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
+//
+// };
+// if   (response.index === 3) {
+//
+//     figure.select('.scrollimg').attr("id", '#step-' + response.index).attr("src", "img/" + "step-0"  + ".jpg").attr('opacity', 1);
+//   // figure.select(".overlayimg1").attr("src", "img/" + "step-1" + ".png").style("opacity",1);  figure.select(".overlayimg2").attr("src", "img/" + "step-2" + ".png").style("opacity",1);
+//
+//   figure.select(".overlayimg3").attr("src", "img/" + "step-3" + ".png").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
 //
 // };
 
-
-  //
-  // figure.select('img').attr("id", '#step-' + response.index).attr("src", "img/" + "step-" + response.index + ".jpg").style('opacity', 0).transition().duration(2000)  .ease(d3.easeLinear).style("opacity",1);
     // figure.select('p').text(response.index);
 
   }
@@ -101,7 +122,7 @@
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         step: '#scrolly article .step',
-        offset: 0.4,
+        offset: 0.9,
         debug: true,
       })
       .onStepEnter(handleStepEnter)
