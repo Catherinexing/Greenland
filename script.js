@@ -26,8 +26,8 @@
         // var stepH = Math.floor(figureHeight * 0.9);
         // step.style('height', stepH + 'px');
 
-        var stepMT = Math.floor(figureHeight * 0.9);
-        step.style('margin-bottom', stepMT + 'px');
+        // var stepMT = Math.floor(figureHeight * 0.9);
+        // step.style('margin-bottom', stepMT + 'px');
     figure
       .style('height', figureHeight + 'px')
       .style('top', figureMarginTop + 'px');
