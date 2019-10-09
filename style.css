@@ -2915,7 +2915,7 @@ section {
   }
 
   .cover_content {
-    margin-top: -8.5em auto;
+    margin-top: -8.5em ;
     position: absolute;
 
   }
@@ -2934,7 +2934,7 @@ section {
 
 @media (min-width:992px) and (orientation:portrait) {
   .cover_content {
-    margin-top: -8.5em auto;
+    margin-top: -8.5em ;
 position: absolute;
   }
 
