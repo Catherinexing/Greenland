@@ -2837,7 +2837,7 @@ section {
   }
 
   .cover_content h1 strong {
-    font-size: 80px;
+    font-size: 60px;
     line-height: .9
   }
   .cover_dek {
@@ -2927,6 +2927,11 @@ section {
 }
 
 @media (min-width:992px) and (orientation:portrait) {
+
+  .cover_content h1 strong {
+    font-size: 80px;
+    line-height: .9
+  }
   .pro_expand {
     width: 83.4%;
     margin-left: 8.3%;
