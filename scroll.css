@@ -97,7 +97,7 @@ figure img{
 
 
   .step {
-  			margin: 0 auto 100rem auto;
+  			margin: 0 auto 80rem auto;
   			/* background-color: yellow; */
 				color: transparent;
 
@@ -105,7 +105,7 @@ figure img{
 
   		}
 			.step :first-child{
-		  	margin-top: 100rem;
+		  	margin-top: 50rem;
 		  		}
   		.step:last-child {
 				/* padding-bottom: 15em; */
