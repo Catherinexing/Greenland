@@ -2866,9 +2866,10 @@ section {
 
 
   .cover_content {
-    margin-top: -8em;
+    /* margin-top: -8em; */
     padding-left: 3%;
     padding-right: 3%;
+    position: relative;
   }
 
 
@@ -2914,7 +2915,9 @@ section {
   }
 
   .cover_content {
-    margin-top: -5em
+    margin-top: -15em；auto;
+    position: absolute;
+
   }
 
   .nav {
@@ -2930,6 +2933,11 @@ section {
 }
 
 @media (min-width:992px) and (orientation:portrait) {
+  .cover_content {
+    margin-top: -15em；auto;
+
+  }
+
 
   .cover_content h1 strong {
     font-size: 80px;
