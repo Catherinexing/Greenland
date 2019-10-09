@@ -2908,7 +2908,10 @@ section {
   .cover_content h1 strong {
     font-size:5.2em
   } */
-
+  .cover_content h1 strong {
+    font-size: 80px;
+    line-height: .9
+  }
 
   .cover_content {
     margin-top: -5em
