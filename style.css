@@ -2810,9 +2810,9 @@ section {
     padding-right: 0
   }
 
-  #link-shadow {
+  /* #link-shadow {
     text-shadow: 1px 1px #999999;
-  }
+  } */
   .p-nomarginbottom-top{
     font-size: 18px;
     text-align: center;
