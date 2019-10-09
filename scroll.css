@@ -104,7 +104,9 @@ figure img{
   			/* opacity:1; */
 
   		}
-
+			.step :first-child{
+		  	margin-top: 100rem;
+		  		}
   		.step:last-child {
 				/* padding-bottom: 15em; */
 				opacity: 0;
