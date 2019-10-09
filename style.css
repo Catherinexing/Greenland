@@ -2795,9 +2795,9 @@ section {
   margin-left: -4.4%;
   margin-right: -4.4%;
 } */
-  #link-shadow {
+  /* #link-shadow {
     text-shadow: none;
-  }
+  } */
 
   .addthis_inline_share_toolbox_h50m {
     top: 15%
@@ -3249,4 +3249,9 @@ hr {
   margin-right: auto;
   border-style: inset;
   border-width: 4px;
+}
+.credit{
+  font-size: 11px;
+    text-transform: uppercase;
+
 }
