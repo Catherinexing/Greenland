@@ -2321,7 +2321,7 @@ html {
   font-size: 26px;
   line-height: 1.2;
   margin: 0;
-  padding: 0;
+  padding: 0 5%;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   /* text-shadow: 1px 1px #999999; */
@@ -2484,10 +2484,10 @@ section {
 }
 
 .cover_content {
-  position: absolute;
+  /* position: absolute; */
   top: 20%;
   width: 100%;
-  margin-top: -3em;
+  /* margin-top: -3em; */
   margin-bottom: -3em;
   text-align: center;
   color:black;
@@ -2765,7 +2765,7 @@ section {
   }
 
   .cover_content h1 strong {
-    font-size: 50px;
+    font-size: 30px;
     /* padding: 10px 0; */
     color: black;
     text-shadow: none;
@@ -2865,12 +2865,12 @@ section {
   } */
 
 
-  .cover_content {
-    /* margin-top: -8em; */
+  /* .cover_content {
+    margin-top: -1.5em;
     padding-left: 3%;
     padding-right: 3%;
     position: relative;
-  }
+  } */
 
 
 
@@ -2915,7 +2915,7 @@ section {
   }
 
   .cover_content {
-    margin-top: -15em；auto;
+    margin-top: -8.5em auto;
     position: absolute;
 
   }
@@ -2934,8 +2934,8 @@ section {
 
 @media (min-width:992px) and (orientation:portrait) {
   .cover_content {
-    margin-top: -15em；auto;
-
+    margin-top: -8.5em auto;
+position: absolute;
   }
 
 
@@ -2960,7 +2960,7 @@ section {
 
 @media (min-width:1200px) {
   .cover_content h1 strong {
-    font-size: 120px;
+    font-size: 100px;
     line-height: .9
   }
   .cover_dek {
@@ -2973,7 +2973,7 @@ section {
     line-height: 1.1;
   }
   .cover_content {
-    margin-top: -5em
+    margin-top: -8.5em
   }
 
   .timeline_container li p {
@@ -2982,7 +2982,10 @@ section {
 }
 
 @media (min-width:1600px) {
-
+  .cover_content h1 strong {
+    font-size: 120px;
+    line-height: .9
+  }
   .col-xl-1 {
     width: 8.3%;
     min-height: 1px;
@@ -3023,7 +3026,7 @@ section {
     font-size: 3.5em
   } */
   .cover_content {
-    margin-top: -6.5em
+    margin-top: -8.5em
   }
 
   .section_text h2 {
