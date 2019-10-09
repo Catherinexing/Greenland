@@ -247,7 +247,7 @@ figure img{
 
 /* common code */
   .scrollama__debug-offset{
-  display: none;
+  /* display: none; */
   }
 
 	.animated {

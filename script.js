@@ -29,7 +29,7 @@
         var stepMT = Math.floor(figureHeight * 0.9);
         step.style('	margin-bottom', stepMT + 'px');
 
-        
+
     figure
       .style('height', figureHeight + 'px')
       .style('top', figureMarginTop + 'px');
@@ -128,7 +128,7 @@
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         step: '#scrolly article .step',
-          // offset: 0.6,
+          offset:1.0 ,
 
         debug: true,
       })
