@@ -20,7 +20,7 @@
 
 
 
-    var figureHeight = window.innerWidth*(1272/2000)
+    var figureHeight = window.innerWidth*(1272/2000*0.7)
     var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
         // var stepH = Math.floor(figureHeight * 0.9);
