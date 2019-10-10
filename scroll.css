@@ -95,9 +95,9 @@ article {
 /* .step :first-child .is-active {
   margin-top: 80rem;
 } */
-.step :first-child  {
+/* .step :first-child  {
  margin-top: 80rem;
-}
+} */
 .step:last-child {
   /* padding-bottom: 15em; */
   opacity: 0;
