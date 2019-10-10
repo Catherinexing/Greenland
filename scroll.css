@@ -115,6 +115,10 @@ article {
 
 }
 
+#north   {
+ margin-top: 80rem !important
+}
+
 .step h2 {
   font-family: Roboto;
   font-weight: bold;
