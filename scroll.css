@@ -115,8 +115,9 @@ article {
 
 }
 
-#north   {
- margin-top: 80rem !important
+#northspace   {
+visibility: hidden!important;
+background-color:transparent !important
 }
 
 .step h2 {
