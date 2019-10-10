@@ -22,7 +22,7 @@
 
     var figureHeight;
 
-    if (window.innerWidth < 600 ) {
+    if (window.innerWidth < 992 ) {
   figureHeight = window.innerWidth*(1272/2000);
     } else {
   figureHeight = window.innerWidth*(1272/2000*0.7);

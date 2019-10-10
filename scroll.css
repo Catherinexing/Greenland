@@ -300,7 +300,7 @@ background-color:transparent !important
     vertical-align: middle;
 } */
 
-@media (min-width:600px) {
+@media (min-width:992px) {
   figure {
     position: -webkit-sticky;
     position: sticky;
@@ -315,6 +315,20 @@ background-color:transparent !important
     text-align: center;
     vertical-align: middle;
 }
+
+article {
+  position: relative;
+  /* padding: 0 1rem; */
+  padding: 0;
+  width: 300px;
+  /* max-width: 20rem; */
+  /* margin: 0 auto; */
+  margin-left: 15%;
+}
+
+}
+
+@media (min-width:600px) {
 
 article {
   position: relative;
