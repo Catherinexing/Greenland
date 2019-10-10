@@ -86,16 +86,18 @@ article {
 }
 
 .step {
-  margin: 0 auto 80rem auto;
+  margin:0 auto 80rem auto;
   background-color: transparent;
   color: transparent;
   /* opacity:0.3; */
 }
 
-.step :first-child {
+/* .step :first-child .is-active {
   margin-top: 80rem;
+} */
+.step :first-child  {
+ margin-top: 80rem;
 }
-
 .step:last-child {
   /* padding-bottom: 15em; */
   opacity: 0;
