@@ -20,7 +20,16 @@
 
 
 
-    var figureHeight = window.innerWidth*(1272/2000*0.7)
+    var figureHeight;
+
+    if (window.innerWidth < 600 ) {
+  figureHeight = window.innerWidth*(1272/2000);
+    } else {
+  figureHeight = window.innerWidth*(1272/2000*0.7);
+};
+
+
+    // figureHeight = window.innerWidth*(1272/2000*0.7)
     var figureMarginTop = (window.innerHeight - figureHeight) / 2
 
         // var stepH = Math.floor(figureHeight * 0.9);
