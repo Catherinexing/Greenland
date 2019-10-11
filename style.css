@@ -3255,19 +3255,21 @@ div.p22 {
   position: relative;
   top: 0;
   text-align: center;
-  padding: 0;
-  margin: 0;
+  /* padding: 0; */
+padding-bottom:5px;
   display: block;
   /* height:auto; */
   /* width:100%; */
   /* background-color: yellow; */
   /* padding: 50px; */
   /* font-size:18px; */
-  padding: 0;
+  /* padding: 0; */
   width：100%;
   margin: 0 auto;
   overflow: hidden;
 }
+
+
 hr {
   display: block;
   margin-top: 0.5em;
@@ -3290,8 +3292,4 @@ hr {
   font-size: 11px;
     text-transform: uppercase;
 
-}
-.fullimg{
-  width: 100%;
-  padding-bottom: 11px;
 }
