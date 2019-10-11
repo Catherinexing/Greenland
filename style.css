@@ -3251,6 +3251,23 @@ div.p2 {
 }
 
 
+div.p22 {
+  position: relative;
+  top: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: block;
+  /* height:auto; */
+  /* width:100%; */
+  /* background-color: yellow; */
+  /* padding: 50px; */
+  /* font-size:18px; */
+  padding: 0;
+  width：100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 hr {
   display: block;
   margin-top: 0.5em;
